@@ -1,0 +1,339 @@
+{
+  "drawCost": "1000",
+  "startGold": "10000",
+  "dailyGold": "10000",
+  "adGold": "10000",
+  "inviteGold": "10000",
+  "adDailyLimit": 3,
+  "maxStage": 30,
+  "boastStage": 14,
+  "sellVariancePct": 15,
+  "grades": [
+    {
+      "id": "common",
+      "name": "일반",
+      "drawPct": 45,
+      "successMult": 1,
+      "priceMultAt30": 1,
+      "kinds": [
+        "동네 축구공",
+        "고무공",
+        "비닐 뭉치공",
+        "헌 가죽공"
+      ]
+    },
+    {
+      "id": "uncommon",
+      "name": "고급",
+      "drawPct": 27,
+      "successMult": 0.97,
+      "priceMultAt30": 1.5,
+      "kinds": [
+        "명장면 공",
+        "야광공",
+        "스펀지 공",
+        "구리 공"
+      ]
+    },
+    {
+      "id": "rare",
+      "name": "희귀",
+      "drawPct": 15,
+      "successMult": 0.94,
+      "priceMultAt30": 2.5,
+      "kinds": [
+        "얼음공",
+        "유리공",
+        "불꽃공",
+        "번개공"
+      ]
+    },
+    {
+      "id": "hero",
+      "name": "영웅",
+      "drawPct": 8,
+      "successMult": 0.91,
+      "priceMultAt30": 4.5,
+      "kinds": [
+        "황금공",
+        "수정공",
+        "용암공",
+        "네온 사이버공"
+      ]
+    },
+    {
+      "id": "legend",
+      "name": "전설",
+      "drawPct": 4,
+      "successMult": 0.88,
+      "priceMultAt30": 8,
+      "kinds": [
+        "우주공",
+        "블랙홀 공",
+        "오로라 공"
+      ]
+    },
+    {
+      "id": "myth",
+      "name": "신화",
+      "drawPct": 1,
+      "successMult": 0.85,
+      "priceMultAt30": 15,
+      "kinds": [
+        "무지개 공",
+        "시간의 공",
+        "은하 심장 공"
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "stage": 0,
+      "successBp": 10000,
+      "keepBp": 0,
+      "destroyBp": 0,
+      "shootCost": "9",
+      "basePrice": "224"
+    },
+    {
+      "stage": 1,
+      "successBp": 9500,
+      "keepBp": 400,
+      "destroyBp": 100,
+      "shootCost": "11",
+      "basePrice": "280"
+    },
+    {
+      "stage": 2,
+      "successBp": 9200,
+      "keepBp": 650,
+      "destroyBp": 150,
+      "shootCost": "14",
+      "basePrice": "354"
+    },
+    {
+      "stage": 3,
+      "successBp": 8800,
+      "keepBp": 1000,
+      "destroyBp": 200,
+      "shootCost": "18",
+      "basePrice": "449"
+    },
+    {
+      "stage": 4,
+      "successBp": 8400,
+      "keepBp": 1300,
+      "destroyBp": 300,
+      "shootCost": "23",
+      "basePrice": "574"
+    },
+    {
+      "stage": 5,
+      "successBp": 7800,
+      "keepBp": 1800,
+      "destroyBp": 400,
+      "shootCost": "30",
+      "basePrice": "744"
+    },
+    {
+      "stage": 6,
+      "successBp": 7200,
+      "keepBp": 2300,
+      "destroyBp": 500,
+      "shootCost": "39",
+      "basePrice": "977"
+    },
+    {
+      "stage": 7,
+      "successBp": 6600,
+      "keepBp": 2750,
+      "destroyBp": 650,
+      "shootCost": "52",
+      "basePrice": "1306"
+    },
+    {
+      "stage": 8,
+      "successBp": 5900,
+      "keepBp": 3300,
+      "destroyBp": 800,
+      "shootCost": "69",
+      "basePrice": "1722"
+    },
+    {
+      "stage": 9,
+      "successBp": 5200,
+      "keepBp": 3800,
+      "destroyBp": 1000,
+      "shootCost": "94",
+      "basePrice": "2347"
+    },
+    {
+      "stage": 10,
+      "successBp": 4500,
+      "keepBp": 4300,
+      "destroyBp": 1200,
+      "shootCost": "134",
+      "basePrice": "3357"
+    },
+    {
+      "stage": 11,
+      "successBp": 3800,
+      "keepBp": 4800,
+      "destroyBp": 1400,
+      "shootCost": "204",
+      "basePrice": "5103"
+    },
+    {
+      "stage": 12,
+      "successBp": 3100,
+      "keepBp": 5300,
+      "destroyBp": 1600,
+      "shootCost": "335",
+      "basePrice": "8380"
+    },
+    {
+      "stage": 13,
+      "successBp": 2600,
+      "keepBp": 5600,
+      "destroyBp": 1800,
+      "shootCost": "493",
+      "basePrice": "12300"
+    },
+    {
+      "stage": 14,
+      "successBp": 2100,
+      "keepBp": 5900,
+      "destroyBp": 2000,
+      "shootCost": "809",
+      "basePrice": "20200"
+    },
+    {
+      "stage": 15,
+      "successBp": 1800,
+      "keepBp": 6000,
+      "destroyBp": 2200,
+      "shootCost": "1533",
+      "basePrice": "38300"
+    },
+    {
+      "stage": 16,
+      "successBp": 1790,
+      "keepBp": 5970,
+      "destroyBp": 2240,
+      "shootCost": "3303",
+      "basePrice": "82600"
+    },
+    {
+      "stage": 17,
+      "successBp": 1790,
+      "keepBp": 5920,
+      "destroyBp": 2290,
+      "shootCost": "7214",
+      "basePrice": "180000"
+    },
+    {
+      "stage": 18,
+      "successBp": 1780,
+      "keepBp": 5890,
+      "destroyBp": 2330,
+      "shootCost": "15900",
+      "basePrice": "399000"
+    },
+    {
+      "stage": 19,
+      "successBp": 1770,
+      "keepBp": 5860,
+      "destroyBp": 2370,
+      "shootCost": "35700",
+      "basePrice": "893000"
+    },
+    {
+      "stage": 20,
+      "successBp": 1760,
+      "keepBp": 5830,
+      "destroyBp": 2410,
+      "shootCost": "81100",
+      "basePrice": "2030000"
+    },
+    {
+      "stage": 21,
+      "successBp": 1760,
+      "keepBp": 5780,
+      "destroyBp": 2460,
+      "shootCost": "186000",
+      "basePrice": "4660000"
+    },
+    {
+      "stage": 22,
+      "successBp": 1750,
+      "keepBp": 5750,
+      "destroyBp": 2500,
+      "shootCost": "433000",
+      "basePrice": "10830000"
+    },
+    {
+      "stage": 23,
+      "successBp": 1740,
+      "keepBp": 5720,
+      "destroyBp": 2540,
+      "shootCost": "1020000",
+      "basePrice": "25510000"
+    },
+    {
+      "stage": 24,
+      "successBp": 1740,
+      "keepBp": 5670,
+      "destroyBp": 2590,
+      "shootCost": "2440000",
+      "basePrice": "60880000"
+    },
+    {
+      "stage": 25,
+      "successBp": 1730,
+      "keepBp": 5640,
+      "destroyBp": 2630,
+      "shootCost": "5880000",
+      "basePrice": "147000000"
+    },
+    {
+      "stage": 26,
+      "successBp": 1720,
+      "keepBp": 5610,
+      "destroyBp": 2670,
+      "shootCost": "14370000",
+      "basePrice": "359000000"
+    },
+    {
+      "stage": 27,
+      "successBp": 1710,
+      "keepBp": 5580,
+      "destroyBp": 2710,
+      "shootCost": "35580000",
+      "basePrice": "889000000"
+    },
+    {
+      "stage": 28,
+      "successBp": 1710,
+      "keepBp": 5530,
+      "destroyBp": 2760,
+      "shootCost": "89200000",
+      "basePrice": "2230000000"
+    },
+    {
+      "stage": 29,
+      "successBp": 1700,
+      "keepBp": 5500,
+      "destroyBp": 2800,
+      "shootCost": "226000000",
+      "basePrice": "5650000000"
+    },
+    {
+      "stage": 30,
+      "successBp": null,
+      "keepBp": null,
+      "destroyBp": null,
+      "shootCost": null,
+      "basePrice": "14500000000"
+    }
+  ]
+}

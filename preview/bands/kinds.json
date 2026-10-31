@@ -1,0 +1,156 @@
+[
+  {
+    "grade": "common",
+    "gradeName": "일반",
+    "idx": 0,
+    "kind": "동네 축구공",
+    "name0": "바람 빠진 동네 축구공"
+  },
+  {
+    "grade": "common",
+    "gradeName": "일반",
+    "idx": 1,
+    "kind": "고무공",
+    "name0": "말랑하게 늘어진 고무공"
+  },
+  {
+    "grade": "common",
+    "gradeName": "일반",
+    "idx": 2,
+    "kind": "비닐 뭉치공",
+    "name0": "테이프로 겨우 감아 놓은 비닐 뭉치"
+  },
+  {
+    "grade": "common",
+    "gradeName": "일반",
+    "idx": 3,
+    "kind": "헌 가죽공",
+    "name0": "꿰맨 자국투성이 헌 가죽공"
+  },
+  {
+    "grade": "uncommon",
+    "gradeName": "고급",
+    "idx": 0,
+    "kind": "명장면 공",
+    "name0": "1930년 대회 사상 첫 골이 터진 낡은 공"
+  },
+  {
+    "grade": "uncommon",
+    "gradeName": "고급",
+    "idx": 1,
+    "kind": "야광공",
+    "name0": "빛이 거의 다 빠진 야광공"
+  },
+  {
+    "grade": "uncommon",
+    "gradeName": "고급",
+    "idx": 2,
+    "kind": "스펀지 공",
+    "name0": "구멍이 숭숭 뚫린 눅눅한 스펀지 공"
+  },
+  {
+    "grade": "uncommon",
+    "gradeName": "고급",
+    "idx": 3,
+    "kind": "구리 공",
+    "name0": "녹이 슨 구리 공"
+  },
+  {
+    "grade": "rare",
+    "gradeName": "희귀",
+    "idx": 0,
+    "kind": "얼음공",
+    "name0": "입김에도 녹는 작은 얼음공"
+  },
+  {
+    "grade": "rare",
+    "gradeName": "희귀",
+    "idx": 1,
+    "kind": "유리공",
+    "name0": "금이 간 투명한 유리공"
+  },
+  {
+    "grade": "rare",
+    "gradeName": "희귀",
+    "idx": 2,
+    "kind": "불꽃공",
+    "name0": "불씨만 간신히 남은 불꽃공"
+  },
+  {
+    "grade": "rare",
+    "gradeName": "희귀",
+    "idx": 3,
+    "kind": "번개공",
+    "name0": "정전기만 찌릿한 번개공"
+  },
+  {
+    "grade": "hero",
+    "gradeName": "영웅",
+    "idx": 0,
+    "kind": "황금공",
+    "name0": "칠이 벗겨진 도금 공"
+  },
+  {
+    "grade": "hero",
+    "gradeName": "영웅",
+    "idx": 1,
+    "kind": "수정공",
+    "name0": "흐릿하게 탁한 수정공"
+  },
+  {
+    "grade": "hero",
+    "gradeName": "영웅",
+    "idx": 2,
+    "kind": "용암공",
+    "name0": "식어 버린 화산석 공"
+  },
+  {
+    "grade": "hero",
+    "gradeName": "영웅",
+    "idx": 3,
+    "kind": "네온 사이버공",
+    "name0": "전원이 꺼진 낡은 회로공"
+  },
+  {
+    "grade": "legend",
+    "gradeName": "전설",
+    "idx": 0,
+    "kind": "우주공",
+    "name0": "먼지만 떠다니는 빈 우주공"
+  },
+  {
+    "grade": "legend",
+    "gradeName": "전설",
+    "idx": 1,
+    "kind": "블랙홀 공",
+    "name0": "빛이 조금 흐려진 검은 공"
+  },
+  {
+    "grade": "legend",
+    "gradeName": "전설",
+    "idx": 2,
+    "kind": "오로라 공",
+    "name0": "빛이 희미하게 일렁이는 공"
+  },
+  {
+    "grade": "myth",
+    "gradeName": "신화",
+    "idx": 0,
+    "kind": "무지개 공",
+    "name0": "빛이 바랜 흐릿한 무지개 공"
+  },
+  {
+    "grade": "myth",
+    "gradeName": "신화",
+    "idx": 1,
+    "kind": "시간의 공",
+    "name0": "멈춰 버린 낡은 시계 공"
+  },
+  {
+    "grade": "myth",
+    "gradeName": "신화",
+    "idx": 2,
+    "kind": "은하 심장 공",
+    "name0": "빛을 잃은 유리구슬 공"
+  }
+]

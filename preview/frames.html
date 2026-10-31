@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공키우기 시안 - 버튼 · 팝업 프레임 A/B/C (스타일 F)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #e8eaf0; font: 15px/1.5 system-ui, "Malgun Gothic", sans-serif; }
+  header { padding: 24px 24px 8px; }
+  h1 { margin: 0 0 4px; font-size: 22px; }
+  header p { margin: 0 0 4px; color: #9aa3b5; }
+  a { color: #7cb3ff; }
+  .tabs { display: flex; gap: 8px; padding: 12px 24px; }
+  .tabs button { background: #232734; color: #e8eaf0; border: 1px solid #3a4054; border-radius: 8px; padding: 8px 16px; cursor: pointer; font: inherit; }
+  .tabs button[aria-pressed="true"] { background: #3b82f6; border-color: #3b82f6; }
+  section.cand { margin: 8px 24px 32px; background: #1c202b; border: 1px solid #2c3244; border-radius: 12px; padding: 16px; }
+  h2 { margin: 0 0 4px; font-size: 20px; }
+  h2 .label { display: inline-block; background: #f59e0b; color: #1c1300; border-radius: 6px; padding: 0 10px; margin-right: 8px; }
+  .desc { color: #9aa3b5; margin: 0 0 12px; font-size: 13px; }
+  .shots { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; }
+  figure { margin: 0; }
+  figcaption { margin-top: 6px; color: #9aa3b5; font-size: 13px; text-align: center; }
+  .kit { width: 520px; max-width: 100%; aspect-ratio: 1; background: #000; border-radius: 12px; overflow: hidden; }
+  .mobile { width: 375px; aspect-ratio: 9 / 16; background: #000; border-radius: 16px; overflow: hidden; }
+  .pc { width: 640px; max-width: 100%; aspect-ratio: 16 / 9; background: #0b0d12; border-radius: 10px; overflow: hidden; display: flex; justify-content: center; }
+  .pc .col { height: 100%; aspect-ratio: 9 / 16; }
+  .pc .side { flex: 1; background: repeating-linear-gradient(45deg, #0f121a 0 12px, #141824 12px 24px); }
+  img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  body.view-pc .mobile, body:not(.view-pc) .pc { display: none; }
+  .note { margin: 0 24px 40px; color: #9aa3b5; font-size: 13px; max-width: 760px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>버튼 · 팝업 프레임 시안 · A / B / C · 스타일 F · 레이아웃 A</h1>
+  <p>각 안은 글자 없는 UI 키트 시트와, 그 키트를 레이아웃 A 슛 화면에 적용한 모습입니다. <a href="index.html">스타일 보드</a> · <a href="ui.html">UI 레이아웃</a> · <a href="balls.html">공 샘플</a></p>
+</header>
+<div class="tabs">
+  <button id="t-m" aria-pressed="true">모바일 375px</button>
+  <button id="t-p" aria-pressed="false">PC 16:9</button>
+</div>
+<div id="root"></div>
+<p class="note">키트 시트에는 글자를 넣지 않았습니다. 이미지 생성 모델이 한글을 틀리게 그리기 때문에, 확정되면 버튼과 팝업에 올라가는 모든 글자는 코드가 그립니다. 오른쪽 화면 속 글자는 레이아웃 확인용입니다.</p>
+<script>
+  const cands = [
+    { k: "A", name: "나무판자", desc: "두툼한 나무 널빤지, 못 머리, 밧줄 장식. 지금 임시 UI의 방향과 가장 가깝고 필드와 가장 자연스럽게 섞입니다." },
+    { k: "B", name: "가죽 + 황동", desc: "스티치 가죽 패널과 황동 모서리 장식. 묵직하고 고급스럽지만 어두운 편이라 필드 위에서 덜 튑니다." },
+    { k: "C", name: "종이 스티커", desc: "굵은 외곽선의 종이 조각에 테이프 모서리. 가장 가볍고 귀엽지만, +30 같은 화려한 연출과는 결이 다릅니다." },
+  ];
+  const root = document.getElementById("root");
+  for (const c of cands) {
+    const el = document.createElement("section");
+    el.className = "cand";
+    el.innerHTML = `<h2><span class="label">${c.k}</span>${c.name}</h2><p class="desc">${c.desc}</p>
+      <div class="shots">
+        <figure><div class="kit"><img src="frames/${c.k}_kit.png" alt="${c.k} UI 키트"></div><figcaption>UI 키트 (글자 없음)</figcaption></figure>
+        <figure>
+          <div class="mobile"><img src="frames/${c.k}_screen.png" alt="${c.k} 슛 화면"></div>
+          <div class="pc"><div class="side"></div><div class="col"><img src="frames/${c.k}_screen.png" alt="${c.k} 슛 화면 PC"></div><div class="side"></div></div>
+          <figcaption>레이아웃 A 슛 화면에 적용</figcaption>
+        </figure>
+      </div>`;
+    root.appendChild(el);
+  }
+  const tm = document.getElementById("t-m"), tp = document.getElementById("t-p");
+  function setView(pc) {
+    document.body.classList.toggle("view-pc", pc);
+    tm.setAttribute("aria-pressed", String(!pc));
+    tp.setAttribute("aria-pressed", String(pc));
+  }
+  tm.onclick = () => setView(false);
+  tp.onclick = () => setView(true);
+</script>
+</body>
+</html>

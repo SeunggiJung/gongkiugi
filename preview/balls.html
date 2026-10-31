@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공키우기 시안 - 공 샘플 v2 (스타일 F)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #e8eaf0; font: 15px/1.5 system-ui, "Malgun Gothic", sans-serif; }
+  header { padding: 24px 24px 8px; }
+  h1 { margin: 0 0 4px; font-size: 22px; }
+  header p { margin: 0; color: #9aa3b5; }
+  a { color: #7cb3ff; }
+  table.s { border-collapse: separate; border-spacing: 12px; margin: 12px 12px 24px; }
+  th { text-align: left; color: #9aa3b5; font-weight: 600; padding: 0 4px; }
+  td.c { background: #2b2118; border-radius: 12px; padding: 10px; text-align: center; vertical-align: top; width: 320px; }
+  td.c img { width: 320px; height: 320px; image-rendering: pixelated; display: block; }
+  td.c b { display: block; margin-top: 8px; font-size: 16px; }
+  td.c span { color: #b9a98f; font-size: 12px; }
+  .grade { background: #1c202b; color: #f59e0b; font-weight: 700; border-radius: 12px; padding: 10px 14px; vertical-align: middle; }
+  h2 { margin: 8px 24px; font-size: 18px; }
+  .ladder { margin: 0 24px 40px; columns: 3 280px; column-gap: 24px; padding: 0; list-style: none; }
+  .ladder li { padding: 3px 0; border-bottom: 1px solid #232734; }
+  .ladder em { font-style: normal; color: #f59e0b; display: inline-block; width: 3em; }
+</style>
+</head>
+<body>
+<header>
+  <h1>공 샘플 v2 · 스타일 F · 일반 / 영웅 / 신화 × +0 / +10 / +30</h1>
+  <p>이름과 이미지 모두 가칭입니다. 도트 128×128, 64색, 배경은 확인용 단색입니다. <a href="index.html">스타일 보드로</a></p>
+</header>
+<table class="s">
+  <tr><th></th><th>+0</th><th>+10</th><th>+30</th></tr>
+  <tr>
+    <td class="grade">일반<br>동네 축구공</td>
+    <td class="c"><img src="balls/common_0.png" alt=""><b>바람 빠진 동네 축구공</b><span>+0</span></td>
+    <td class="c"><img src="balls/common_10.png" alt=""><b>전설의 골목대장 공</b><span>+10</span></td>
+    <td class="c"><img src="balls/common_30.png" alt=""><b>무한우주를 골로 끝내는 종언의 대축구공</b><span>+30</span></td>
+  </tr>
+  <tr>
+    <td class="grade">영웅<br>용암공</td>
+    <td class="c"><img src="balls/hero_0.png" alt=""><b>식어 버린 화산석 공</b><span>+0</span></td>
+    <td class="c"><img src="balls/hero_10.png" alt=""><b>끓어오르는 용암의 심장 공</b><span>+10</span></td>
+    <td class="c"><img src="balls/hero_30.png" alt=""><b>태양을 삼키고 분화하는 종언의 용암공</b><span>+30</span></td>
+  </tr>
+  <tr>
+    <td class="grade">신화<br>은하 심장 공</td>
+    <td class="c"><img src="balls/myth_0.png" alt=""><b>빛을 잃은 유리구슬 공</b><span>+0</span></td>
+    <td class="c"><img src="balls/myth_10.png" alt=""><b>은하가 숨 쉬는 심장 공</b><span>+10</span></td>
+    <td class="c"><img src="balls/myth_30.png" alt=""><b>창세의 은하 심장: 무한우주의 첫 박동</b><span>+30</span></td>
+  </tr>
+</table>
+<h2>동네 축구공 +0 ~ +30 이름 전체 (단계마다 전부 다름)</h2>
+<ol class="ladder" start="0" id="ladder"></ol>
+<script>
+  const names = ["바람 빠진 동네 축구공","흙먼지 묻은 축구공","골목을 굴러다니는 공","담벼락에 튕겨 오는 공","유리창을 노리는 말썽쟁이 공","동네 대장이 아끼는 가죽공","회전이 걸려 휘어지는 공","골망을 흔드는 강슛 공","수비벽을 뚫는 탄환 공","골키퍼가 눈을 감는 공","전설의 골목대장 공","니케의 첫 승전보 공","니케의 황금 결승 공","니케의 절대 승리 공","신들의 경기장을 가르는 공","만물의 근원 우주의 축구공","중력을 찢고 날아오르는 공","시간을 멈추고 골망을 가르는 공","차원의 골대를 꿰뚫는 공","은하 결승전을 끝내는 공","우주 대회를 제패한 축구의 신구","별을 골대로 삼는 공","초신성처럼 폭발하는 슛","블랙홀 키퍼도 삼키지 못한 공","무수한 세계선의 승부차기","모든 평행우주의 승리를 모은 공","창조와 파괴를 동시에 차는 공","개념 자체를 골로 만드는 공","존재의 승패를 정하는 절대 공","우주의 마지막 승부차기","무한우주를 골로 끝내는 종언의 대축구공"];
+  document.getElementById("ladder").innerHTML = names.map((n, i) => `<li><em>+${i}</em>${n}</li>`).join("");
+</script>
+</body>
+</html>

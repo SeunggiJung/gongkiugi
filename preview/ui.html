@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공키우기 시안 - UI 레이아웃 A/B (스타일 F)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #e8eaf0; font: 15px/1.5 system-ui, "Malgun Gothic", sans-serif; }
+  header { padding: 24px 24px 8px; }
+  h1 { margin: 0 0 4px; font-size: 22px; }
+  header p { margin: 0 0 4px; color: #9aa3b5; }
+  a { color: #7cb3ff; }
+  .tabs { display: flex; gap: 8px; padding: 12px 24px; }
+  .tabs button { background: #232734; color: #e8eaf0; border: 1px solid #3a4054; border-radius: 8px; padding: 8px 16px; cursor: pointer; font: inherit; }
+  .tabs button[aria-pressed="true"] { background: #3b82f6; border-color: #3b82f6; }
+  section.layout { margin: 8px 24px 32px; background: #1c202b; border: 1px solid #2c3244; border-radius: 12px; padding: 16px; }
+  h2 { margin: 0 0 4px; font-size: 20px; }
+  h2 .label { display: inline-block; background: #f59e0b; color: #1c1300; border-radius: 6px; padding: 0 10px; margin-right: 8px; }
+  .desc { color: #9aa3b5; margin: 0 0 12px; font-size: 13px; }
+  .shots { display: flex; gap: 16px; flex-wrap: wrap; }
+  figure { margin: 0; }
+  figcaption { margin-top: 6px; color: #9aa3b5; font-size: 13px; text-align: center; }
+  .mobile { width: 375px; aspect-ratio: 9 / 16; background: #000; border-radius: 16px; overflow: hidden; }
+  .pc { width: 640px; max-width: 100%; aspect-ratio: 16 / 9; background: #0b0d12; border-radius: 10px; overflow: hidden; display: flex; justify-content: center; }
+  .pc .col { height: 100%; aspect-ratio: 9 / 16; }
+  .pc .side { flex: 1; background: repeating-linear-gradient(45deg, #0f121a 0 12px, #141824 12px 24px); }
+  img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  body.view-pc .mobile, body:not(.view-pc) .pc { display: none; }
+  .note { margin: 0 24px 40px; color: #9aa3b5; font-size: 13px; max-width: 760px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>UI 레이아웃 시안 · A / B · 스타일 F</h1>
+  <p>화면 3종: 슛 화면, 팔기/계속 팝업, 도감(펼침). 팝업에는 판매 금액을 쓰지 않았습니다. <a href="index.html">스타일 보드</a> · <a href="balls.html">공 샘플</a></p>
+</header>
+<div class="tabs">
+  <button id="t-m" aria-pressed="true">모바일 375px</button>
+  <button id="t-p" aria-pressed="false">PC 16:9</button>
+</div>
+<div id="root"></div>
+<p class="note">레이아웃 확인용 시안입니다. 이미지 속 글자는 생성 모델이 그린 것이라 일부 오탈자가 있습니다(예: "슛"이 "숏"으로 보임). 실제 게임에서는 정확한 글자로 직접 그립니다.</p>
+<script>
+  const layouts = [
+    { k: "A", name: "클래식 풀필드", desc: "필드를 화면 전체에 쓰고, 확률 칩은 상단, 공은 페널티 스폿 위, 방향 버튼 3개는 맨 아래. 도감·상점·충전은 좌측 원형 아이콘." },
+    { k: "B", name: "하단 시트형", desc: "위 55%는 필드, 아래 45%는 나무 패널. 공 이름, 확률 막대 3줄, 슛 비용, 방향 버튼, 4탭 메뉴(뽑기·상점·도감·충전)가 한 덩어리." },
+  ];
+  const screens = [["shoot", "슛 화면"], ["choose", "팔기 / 계속 팝업"], ["dex", "도감 (펼침)"]];
+  const root = document.getElementById("root");
+  for (const l of layouts) {
+    const el = document.createElement("section");
+    el.className = "layout";
+    el.innerHTML = `<h2><span class="label">${l.k}</span>${l.name}</h2><p class="desc">${l.desc}</p><div class="shots">` +
+      screens.map(([s, t]) => `<figure>
+        <div class="mobile"><img src="ui/${l.k}_${s}.png" alt="${l.k} ${t}"></div>
+        <div class="pc"><div class="side"></div><div class="col"><img src="ui/${l.k}_${s}.png" alt="${l.k} ${t} PC"></div><div class="side"></div></div>
+        <figcaption>${t}</figcaption></figure>`).join("") + `</div>`;
+    root.appendChild(el);
+  }
+  const tm = document.getElementById("t-m"), tp = document.getElementById("t-p");
+  function setView(pc) {
+    document.body.classList.toggle("view-pc", pc);
+    tm.setAttribute("aria-pressed", String(!pc));
+    tp.setAttribute("aria-pressed", String(pc));
+  }
+  tm.onclick = () => setView(false);
+  tp.onclick = () => setView(true);
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공키우기 - 변신 연출 (구간이 바뀌는 골)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #e8eaf0; font: 15px/1.5 system-ui, "Malgun Gothic", sans-serif; }
+  header, section { padding: 16px 24px; max-width: 1180px; }
+  h1 { margin: 0 0 4px; font-size: 22px; } h2 { margin: 0 0 8px; font-size: 18px; }
+  p { margin: 0 0 6px; color: #9aa3b5; } a { color: #7cb3ff; }
+  img { max-width: 100%; border-radius: 8px; display: block; }
+  code { background: #232734; padding: 1px 6px; border-radius: 4px; }
+  li { margin: 4px 0; color: #c8cfdc; }
+</style>
+</head>
+<body>
+<header>
+  <h1>변신 연출 — 구간이 바뀌는 골 (+5 · +10 · +15 …)</h1>
+  <p>실제 게임 화면에서 연출을 20~60배 느리게 돌려 정해진 시각마다 정지시켜 찍은 프레임입니다. 용암공 기준이고 다른 종류도 같은 연출입니다. <a href="index.html">시안 갤러리</a></p>
+</header>
+<section>
+  <h2>+4 → +5: 시간 순서 (0 · 380 · 475 · 560 · 700 · 1000ms)</h2>
+  <p>이전 공이 용암색으로 달아오르며 충전 → 하얗게 번쩍하며 교체 → 새 본체가 크게 튀어나옴 → 폭발과 "+5 변신!" 글자 → 안정.</p>
+  <img src="evo/lava5_sheet.png" alt="+5 변신 순서">
+</section>
+<section>
+  <h2>충전 장면 확대 (300ms · 420ms)</h2>
+  <img src="evo/lava5_charge.png" alt="충전 장면">
+</section>
+<section>
+  <h2>구간별 비교: 위는 폭발 순간(680ms), 아래는 안정된 새 본체</h2>
+  <p>왼쪽부터 +5, +10, +15. 구간이 높을수록 충격파와 불꽃이 더 크고 많습니다.</p>
+  <img src="evo/lava_all_sheet.png" alt="+5 · +10 · +15 비교">
+</section>
+<section>
+  <h2>직접 보기 (개발 서버 전용 데모 링크)</h2>
+  <ul>
+    <li><code>http://127.0.0.1:5173/#demo=hero_2_4&amp;win=1</code> 용암공 +4 에서 시작, 다음 슛은 항상 골 → +5 변신</li>
+    <li><code>#demo=hero_2_9&amp;win=1</code> 용암공 +9 → +10 변신, <code>#demo=hero_2_14&amp;win=1</code> +14 → +15 변신</li>
+    <li>다른 종류는 <code>등급_종류번호_단계</code> 로 바꾸면 됩니다. 예: <code>#demo=legend_0_9&amp;win=1</code> (우주공), <code>#demo=rare_2_4&amp;win=1</code> (불꽃공), <code>#demo=myth_1_14&amp;win=1</code> (시간의 공)</li>
+    <li>끝에 <code>&amp;slow=20</code> 을 붙이면 20배 느리게 볼 수 있습니다. 링크를 연 뒤 주소만 바꾸면 반영되지 않으니 새로고침하세요. 데모는 저장 데이터를 바꾸지 않습니다.</li>
+  </ul>
+</section>
+</body>
+</html>

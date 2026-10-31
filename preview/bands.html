@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공키우기 시안 - 용암공 구간별 본체 (+0 · +5 · +10 · +15)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #e8eaf0; font: 15px/1.5 system-ui, "Malgun Gothic", sans-serif; }
+  header { padding: 24px 24px 8px; }
+  h1 { margin: 0 0 4px; font-size: 22px; }
+  header p { margin: 0 0 4px; color: #9aa3b5; max-width: 860px; }
+  a { color: #7cb3ff; }
+  h2 { margin: 22px 24px 8px; font-size: 18px; }
+  .row { display: flex; gap: 14px; padding: 0 24px; flex-wrap: wrap; align-items: flex-end; }
+  figure { margin: 0; text-align: center; }
+  figcaption { margin-top: 6px; color: #9aa3b5; font-size: 13px; max-width: 200px; }
+  figcaption b { color: #e8eaf0; display: block; }
+  .sheet img { width: 512px; height: 512px; image-rendering: pixelated; border-radius: 8px; display: block; }
+  .tile { border-radius: 10px; padding: 8px; display: flex; align-items: center; justify-content: center; }
+  .field { background: url(bands/bg.png) 50% 72% / 520px auto; }
+  .cream { background: #f1e2bf; }
+  .tile img { image-rendering: pixelated; display: block; }
+  .big img { width: 200px; height: 200px; }
+  .notes { margin: 8px 24px 40px; max-width: 860px; color: #9aa3b5; font-size: 14px; }
+  .notes li { margin: 4px 0; }
+  .dexrow { display: flex; align-items: center; gap: 10px; background: #f1e2bf; color: #3a2410; border-radius: 8px; padding: 6px 10px; margin-bottom: 6px; width: 330px; font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>용암공 · 구간별 본체 시안 (+0 · +5 · +10 · +15)</h1>
+  <p>확정된 +0 이미지를 참고로 줘서 같은 공이 구간마다 변하게 뽑았습니다 (512 시트 한 장). 모든 칸이 투명 배경의 독립된 이미지라 게임 화면과 도감 썸네일에 그대로 쓰입니다. <a href="index.html">시안 갤러리</a> · <a href="tierfx.html">이전 효과 겹치기 시안(보류)</a></p>
+</header>
+<h2>시트 원본</h2>
+<div class="row"><figure class="sheet"><img src="bands/hero_2_sheet.png" alt="용암공 시트"><figcaption>왼쪽 위 +0 재현 · 오른쪽 위 +5 · 왼쪽 아래 +10 · 오른쪽 아래 +15</figcaption></figure></div>
+<h2>후처리 결과 (같은 도트 밀도, 게임 필드 위, 크게)</h2>
+<div class="row big" id="field"></div>
+<h2>도감에서 보이는 크기 (40px 행 썸네일 · 28px 단계 썸네일)</h2>
+<div class="row" id="dex" style="align-items:flex-start;gap:24px"></div>
+<h2>비교: 지금 게임에 확정되어 있는 +0 이미지</h2>
+<div class="row"><figure><div class="tile field"><img src="bands/hero_2_base.png" style="width:128px;height:128px"></div><figcaption><b>+0 (확정)</b>식어 버린 화산석 공</figcaption></figure></div>
+<ul class="notes">
+  <li><b>+5</b> 방금까지 타던 돌: 균열이 달아오르고 용암 줄기가 공을 감쌈. <b>+10</b> 갑각이 갈라져 용암 속이 드러나고 윗부분에 분화구 원뿔이 생기고 용암이 흘러내림. <b>+15</b> 용암이 흘러넘치는 덩어리가 되어 위로 솟고 고리가 공을 돎(공 본질이 흐려진 유체형).</li>
+  <li>공 본체는 네 칸이 같은 도트 크기가 되도록 줄였습니다. 칸 중심을 공 중심으로 잡아 게임에서 같은 자리에 겹쳐 쓸 수 있습니다.</li>
+</ul>
+<script>
+  const info = fetch("bands/hero_2_info.json").then((r) => r.json());
+  const names = { 0: ["+0", "식어 버린 화산석 공"], 5: ["+5", "부글부글 끓기 시작한 용암공"], 10: ["+10", "끓어오르는 용암의 심장 공"], 15: ["+15", "우주의 핵으로 흐르는 마그마의 공"] };
+  info.then((inf) => {
+    const sprite = inf.sprite_px;
+    document.getElementById("field").innerHTML = [0, 5, 10, 15].map((l) => `
+      <figure><div class="tile field"><img src="bands/hero_2_${l}.png" style="width:${sprite * 2.6}px;height:${sprite * 2.6}px"></div><figcaption><b>${names[l][0]}</b>${names[l][1]}</figcaption></figure>`).join("");
+    document.getElementById("dex").innerHTML = `
+      <div>${[0, 5, 10, 15].map((l) => `<div class="dexrow"><img src="bands/hero_2_${l}.png" style="width:40px;height:40px;image-rendering:pixelated"><span><b>${names[l][0]}</b> ${names[l][1]}</span></div>`).join("")}</div>
+      <div>${[0, 5, 10, 15].map((l) => `<div class="dexrow"><img src="bands/hero_2_${l}.png" style="width:28px;height:28px;image-rendering:pixelated"><span>${names[l][0]} 단계 썸네일 (28px)</span></div>`).join("")}</div>`;
+  });
+</script>
+</body>
+</html>

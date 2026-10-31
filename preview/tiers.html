@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공키우기 시험 - 단계 외형 4개를 한 장에 (512)</title>
+<style>
+  body { margin: 0; background: #14161c; color: #e8eaf0; font: 15px/1.5 system-ui, "Malgun Gothic", sans-serif; }
+  header { padding: 24px 24px 8px; }
+  h1 { margin: 0 0 4px; font-size: 22px; }
+  header p { margin: 0 0 4px; color: #9aa3b5; }
+  a { color: #7cb3ff; }
+  h2 { margin: 20px 24px 8px; font-size: 18px; }
+  .row { display: flex; gap: 16px; padding: 0 24px; flex-wrap: wrap; align-items: flex-start; }
+  figure { margin: 0; }
+  figcaption { margin-top: 6px; color: #9aa3b5; font-size: 13px; text-align: center; }
+  .sheet img { width: 512px; height: 512px; image-rendering: pixelated; display: block; border-radius: 8px; }
+  .cell { width: 230px; height: 230px; background: url(tiers/bg.png) 50% 70% / 460px auto; image-rendering: pixelated; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .cell img { width: 100%; height: 100%; image-rendering: pixelated; }
+  .notes { margin: 8px 24px 40px; max-width: 760px; color: #9aa3b5; font-size: 14px; }
+  .notes li { margin: 4px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>시험: 단계 외형 4개를 한 장에 (512 해상도) · 전설 등급 우주공</h1>
+  <p>한 장(512×512)에 우주공의 +0 · +10 · +20 · +30 을 2×2 로 뽑은 결과입니다. <a href="index.html">시안 갤러리</a> · <a href="balls0.html">공 22종 0단계</a></p>
+</header>
+<h2>시트 원본</h2>
+<div class="row"><figure class="sheet"><img src="tiers/legend_0_sheet.png" alt="시트"><figcaption>왼쪽 위 +0 · 오른쪽 위 +10 · 왼쪽 아래 +20 · 오른쪽 아래 +30</figcaption></figure></div>
+<h2>칸별로 잘라 게임 배경 위에 얹은 모습 (마젠타 제거)</h2>
+<div class="row">
+  <figure><div class="cell"><img src="tiers/legend_0_s0.png"></div><figcaption>+0</figcaption></figure>
+  <figure><div class="cell"><img src="tiers/legend_0_s10.png"></div><figcaption>+10</figcaption></figure>
+  <figure><div class="cell"><img src="tiers/legend_0_s20.png"></div><figcaption>+20</figcaption></figure>
+  <figure><div class="cell"><img src="tiers/legend_0_s30.png"></div><figcaption>+30</figcaption></figure>
+</div>
+<ul class="notes">
+  <li>512 지정은 API 가 받아들였고 결과가 정확히 512×512 로 나왔습니다. 한 장에 4개라 한 칸은 256×256 입니다.</li>
+  <li>확인할 점: 칸 구분선이 얇게 그려졌고, +0 공이 다른 칸보다 크며, +30 은 칸 전체에 배경 폭발이 깔려서 투명하게 따지지 않습니다.</li>
+</ul>
+</body>
+</html>

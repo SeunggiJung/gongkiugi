@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공키우기 시안 갤러리 - 픽셀 스타일 보드</title>
+<style>
+  body { margin: 0; background: #14161c; color: #e8eaf0; font: 15px/1.5 system-ui, "Malgun Gothic", sans-serif; }
+  header { padding: 24px 24px 8px; }
+  h1 { margin: 0 0 4px; font-size: 22px; }
+  header p { margin: 0; color: #9aa3b5; }
+  .tabs { display: flex; gap: 8px; padding: 12px 24px; }
+  .tabs button { background: #232734; color: #e8eaf0; border: 1px solid #3a4054; border-radius: 8px; padding: 8px 16px; cursor: pointer; }
+  .tabs button[aria-pressed="true"] { background: #3b82f6; border-color: #3b82f6; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 24px; padding: 8px 24px 40px; }
+  .card { background: #1c202b; border: 1px solid #2c3244; border-radius: 12px; padding: 16px; }
+  .card h2 { margin: 0 0 4px; font-size: 18px; }
+  .card h2 .label { display: inline-block; background: #f59e0b; color: #1c1300; border-radius: 6px; padding: 0 10px; margin-right: 8px; }
+  .card p { margin: 0 0 12px; color: #9aa3b5; font-size: 13px; }
+  .stage { display: flex; justify-content: center; }
+  .mobile { width: 375px; max-width: 100%; aspect-ratio: 9 / 16; background: #000; border-radius: 18px; overflow: hidden; }
+  .pc { width: 100%; aspect-ratio: 16 / 9; background: #0b0d12; border-radius: 10px; overflow: hidden; display: flex; justify-content: center; }
+  .pc .col { height: 100%; aspect-ratio: 9 / 16; }
+  .pc .side { flex: 1; background: repeating-linear-gradient(45deg, #0f121a 0 12px, #141824 12px 24px); }
+  img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; display: block; }
+  body.view-pc .mobile, body:not(.view-pc) .pc { display: none; }
+  .lowres { margin-top: 12px; display: flex; align-items: center; gap: 12px; color: #9aa3b5; font-size: 12px; }
+  .lowres img { width: auto; height: 96px; border: 1px solid #3a4054; }
+</style>
+</head>
+<body>
+<header>
+  <h1>공키우기 시안 갤러리 · 픽셀 스타일 보드 3안</h1>
+  <p>아트 스타일을 한 가지 고르면, 이후 공·골대·골키퍼·배경·UI 시안은 모두 그 스타일을 따릅니다. 아래 이미지는 후처리(축소 + 색 수 제한)가 끝난 결과입니다. <a href="balls.html" style="color:#7cb3ff">공 샘플(F) 보기</a> · <a href="ui.html" style="color:#7cb3ff">UI 레이아웃 시안 보기</a> · <a href="frames.html" style="color:#7cb3ff">버튼·팝업 프레임 시안 보기</a> · <a href="field.html" style="color:#7cb3ff">필드·골대·키퍼 시안 보기</a> · <a href="balls0.html" style="color:#7cb3ff">공 22종 0단계 시안 보기</a> · <a href="tierfx.html" style="color:#7cb3ff">공 단계 효과·선택 요소 보기</a> · <a href="bands.html" style="color:#7cb3ff">용암공 구간별 본체 시안 보기</a> · <a href="bands_all.html" style="color:#7cb3ff">공 22종 구간별 본체 시안 보기</a> · <a href="evo.html" style="color:#7cb3ff">변신 연출 보기</a></p>
+</header>
+<div class="tabs">
+  <button id="t-m" aria-pressed="true">모바일 375px</button>
+  <button id="t-p" aria-pressed="false">PC 16:9</button>
+</div>
+<main class="grid" id="grid"></main>
+<script>
+  const styles = [
+    { k: "A", name: "16비트 선명", spec: "180×320 · 32색 · 검은 윤곽선 · 낮 경기장" },
+    { k: "B", name: "레트로 칩튠", spec: "120×214 · 16색 · 윤곽선 없음 · 노을 경기장" },
+    { k: "C", name: "모던 HD 픽셀", spec: "270×480 · 48색 · 색 윤곽선 · 네온 야간 경기장" },
+    { k: "D", name: "귀여운 캔디 치비", spec: "160×284 · 24색 · 굵은 윤곽선 · 밝은 낮 · 마스코트 골키퍼" },
+    { k: "E", name: "80년대 아케이드", spec: "224×398 · 12색 · 네온 그리드 · 신스웨이브 노을" },
+    { k: "F", name: "포근한 동화풍", spec: "200×356 · 40색 · 따뜻한 질감 · 동네 공터 석양" },
+  ];
+  const grid = document.getElementById("grid");
+  for (const s of styles) {
+    const el = document.createElement("section");
+    el.className = "card";
+    el.innerHTML = `
+      <h2><span class="label">${s.k}</span>${s.name}</h2>
+      <p>${s.spec}</p>
+      <div class="stage"><div class="mobile"><img src="styleboard/${s.k}.png" alt="${s.k}안 모바일"></div>
+        <div class="pc"><div class="side"></div><div class="col"><img src="styleboard/${s.k}.png" alt="${s.k}안 PC"></div><div class="side"></div></div></div>
+      <div class="lowres"><img src="styleboard/${s.k}_lowres.png" alt="${s.k}안 원본 해상도"><span>실제 도트 해상도 (확대 전)</span></div>`;
+    grid.appendChild(el);
+  }
+  const tm = document.getElementById("t-m"), tp = document.getElementById("t-p");
+  function setView(pc) {
+    document.body.classList.toggle("view-pc", pc);
+    tm.setAttribute("aria-pressed", String(!pc));
+    tp.setAttribute("aria-pressed", String(pc));
+  }
+  tm.onclick = () => setView(false);
+  tp.onclick = () => setView(true);
+</script>
+</body>
+</html>
